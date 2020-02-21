@@ -12,7 +12,12 @@ module.exports.initialize = (queue) => {
   messageQueue = queue;
 };
 
+
 module.exports.router = (req, res, next = ()=>{}) => {
+
+  if (req.url === '/hello'){
+    console.log('hey', req.method)
+  }
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
   res.writeHead(200, headers);
   res.end();

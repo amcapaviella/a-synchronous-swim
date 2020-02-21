@@ -6,6 +6,18 @@
   // TODO: build the swim command fetcher here
   //
 
+  const getCommand = (message, successCB, errorCB) => {
+    $.ajax({
+      type: 'GET',
+      url: serverUrl
+      success: successCB,
+      error: errorCB
+      }
+    })
+  }
+
+
+
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.
