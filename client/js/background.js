@@ -1,0 +1,6 @@
+const backgroundImage = {
+
+  add: (image) => {
+
+  }
+}

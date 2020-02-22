@@ -25,7 +25,6 @@ var request = function(url, method, postdata) {
     return this;
   };
 };
-
 var response = function() {
   this._ended = false;
   this._responseCode = null;

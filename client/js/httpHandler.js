@@ -6,16 +6,37 @@
   // TODO: build the swim command fetcher here
   //
 
-  const getCommand = (message, successCB, errorCB) => {
+  const getCommand = (message, errorCB) => {
     $.ajax({
       type: 'GET',
-      url: serverUrl
-      success: successCB,
+      url: serverUrl,
+      success: function (data){
+        console.log(data);
+        if (typeof data === 'string'){
+          SwimTeam.move(data);
+         } else {
+           //console.log(data);
+       }
+
+      },
       error: errorCB
-      }
     })
   }
 
+  setInterval(getCommand, 5000);
+
+//   const getBackground = (message, errorCB) => {
+//     $.ajax({
+//       type: 'GET',
+//       url: serverUrl + '/background',
+//       success: function (data){
+//         background.add(data.img);
+//       },
+//       error: errorCB
+//     })
+//   }
+
+// $('button').on('click', getBackground)
 
 
   /////////////////////////////////////////////////////////////////////
